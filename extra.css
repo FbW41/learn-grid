@@ -1,0 +1,58 @@
+.container {
+  width: 80vw;
+  /* height: 80vh; */
+  background-color: #c8e9a0b2;
+  margin: 20px auto;
+
+  display: grid;
+  gap: 30px;
+
+  /* two rows set to 150px */
+  grid-template-rows: 1fr 1fr;
+
+  /* min-content (will wrap and be width of largest item(word) -  --- max-content will be continue to grow with*/
+  grid-template-columns: min-content 1fr 1fr minmax(150px, 300px);
+
+  /* auto fill vs auto fit */
+  /* auto fill and auto fit cannot be combined with intrinsic sizes - i.e. min-content,max-content, auto, etc...  */
+  grid-template-columns: repeat(auto-fill, minmax(150px, 400px));
+
+  /* change height of implicit rows and columns */
+  /* grid-auto-rows: 200px; */
+  /* grid-auto-columns: 200px; */
+
+  /* can be a row or column  -- by default it's a row*/
+  /* grid-auto-flow: column; */
+
+  /* auto fill auto fit */
+
+  /* moving grid content on row axis *when grid is smaller than container */
+  /* justify-content: start; */
+}
+
+.item {
+  font-size: 2rem;
+  font-weight: 900;
+  padding: 1rem;
+
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.item-3 {
+  /* grid-row: 2/4; */
+  /* grid-column: 1/-1; */
+  /* row axis aligning  */
+  /* justify-self: center; */
+  /* column */
+  /* align-self: center; */
+}
+
+.item:nth-child(odd) {
+  background-color: #9bf6ff;
+}
+
+.item:nth-child(even) {
+  background-color: #bdb2ff;
+}
